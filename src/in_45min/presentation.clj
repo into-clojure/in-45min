@@ -7,8 +7,8 @@
 ;    :height 50})
 
 (def ^:dynamic *screen-size*
-  {:width 109
-   :height 26})
+  {:width 88
+   :height 20})
 
 (def ^:dynamic *centering*
   {:v-centered true
@@ -34,7 +34,7 @@
   (concat "\n"
           (if (:h-centered *centering*)
             (-> *screen-size* :width (- (count s)) (/ 2) dec (repeat \space))
-            (-> *screen-size* :width (/ 10) inc (repeat \space)))
+            (-> *screen-size* :width (/ 25) inc (repeat \space)))
           [s]))
 
 (defn- print-lines
@@ -126,7 +126,7 @@
   [& sections]
   `(do
     ~@(for [[section-name slides] (partition 2 sections)
-              :let [fn-symbol (->> section-name name (format "p%s") symbol)]]
+              :let [fn-symbol (->> section-name name (format "%s") symbol)]]
         `(defn ~fn-symbol
            []
            (present ~@slides)))))

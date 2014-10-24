@@ -3,7 +3,8 @@
   (:require [clojure.string :as s]
             [in-45min.presentation :refer [defpresentation] :as presentation]))
 
-(def mail "some@mail.com")
+(def my-name "my name")
+(def mail "my@email.com")
 
 (def secret
   {0 \!
@@ -25,7 +26,7 @@
    8 \e})
 
 (defpresentation
-  :s1-intro     [
+  :sec1-intro   [
                  :new-slide-centered
                   ""
                   ""
@@ -38,7 +39,7 @@
                   ""
                   "(into clojure)"
                   ""
-                  "Name"
+                  my-name
                   mail
                  :new-slide-centered
                   "GOALS"
@@ -48,7 +49,7 @@
                   "1. Get into clojure as much as we can in 45min."
                   "2. Give you some useful pointers to continue on your own."
                   ]
-  :s2-special-forms [
+  :sec2-special-forms [
                 :new-slide-centered
                   "Special Forms"
                   "============="
@@ -70,19 +71,19 @@
                   "throw"
                   "try"
                 :new-slide-numbered-list
-                  "def       => (def symbol init?)"
-                  "if        => (if test then else?)"
-                  "do        => (do exprs*)"
-                  "let       => (let [bindings* ] exprs*)"
-                  "quote     => (quote form)"
-                  "var       => (var symbol)"
-                  "fn        => (fn name? [params* ] exprs*)..."
-                  "loop      => (loop [bindings* ] exprs*)"
-                  "recur     => (recur exprs*)"
-                  "throw    => (throw expr)"
-                  "try      => (try expr* catch-clause* finally-clause?)"
+                  "def     => (def symbol init?)"
+                  "if      => (if test then else?)"
+                  "do      => (do exprs*)"
+                  "let     => (let [bindings* ] exprs*)"
+                  "quote   => (quote form)"
+                  "var     => (var symbol)"
+                  "fn      => (fn name? [params* ] exprs*)..."
+                  "loop    => (loop [bindings* ] exprs*)"
+                  "recur   => (recur exprs*)"
+                  "throw  => (throw expr)"
+                  "try    => (try expr* catch-clause* finally-clause?)"
                 ]
-  :s3-end      [
+  :sec3-end    [
                 :new-slide-centered
                   "And from here...?"
                 :new-slide
@@ -90,19 +91,35 @@
                   "Online documentation"
                   "--------------------"
                   ""
-                  "- Official Clojure page:           http://clojure.org"
-                  "- Clojure cheatsheet:              http://jafingerhut.github.io"
-                  "- Clojure Style Guide:             http://github.com/bbatsov/clojure-style-guide"
-                  "- Clojure for the Brave and True:  http://braveclojure.com" ; "an Online Book for Beginners"
+                  "- Official Clojure page"
+                  "  http://clojure.org"
                   ""
+                  "- Clojure cheatsheet"
+                  "  http://jafingerhut.github.io"
+                  ""
+                  "- Clojure Style Guide"
+                  "  http://github.com/bbatsov/clojure-style-guide"
+                  ""
+                  "- Clojure for the Brave and True"
+                  "  http://braveclojure.com" ; "an Online Book for Beginners"
+                  ""
+                :new-slide
                   ""
                   "Online learning resources"
                   "-------------------------"
                   ""
-                  "- Learn Clojure:                   http://learn-clojure.com"
-                  "- 4clojure:                        http://4clojure.com"
-                  "- Try Clojure Online:              http://tryclj.com"
-                  "- Clojure Koans:                   http://clojurekoans.com"
+                  "- Learn Clojure:"
+                  "  http://learn-clojure.com"
+                  ""
+                  "- 4clojure:"
+                  "  http://4clojure.com"
+                  ""
+                  "- Try Clojure Online:"
+                  "  http://tryclj.com"
+                  ""
+                  "- Clojure Koans:"
+                  "  http://clojurekoans.com"
+                  ""
                   ""
                 :new-slide
                   ""

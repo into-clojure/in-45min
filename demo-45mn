@@ -1,0 +1,103 @@
+;;
+;; demo of aeronautical alphabet translator
+;; 
+;; RAW WIP  RAW WIP  RAW WIP  RAW WIP  RAW WIP !!!!!
+;; RAW WIP  RAW WIP  RAW WIP  RAW WIP  RAW WIP !!!!!
+;; RAW WIP  RAW WIP  RAW WIP  RAW WIP  RAW WIP !!!!!
+;; RAW WIP  RAW WIP  RAW WIP  RAW WIP  RAW WIP !!!!!
+;; RAW WIP  RAW WIP  RAW WIP  RAW WIP  RAW WIP !!!!!
+
+;; SYNTAX
+;; (f a1 a2 a3)
+
+;; EXAMPLES TBD
+
+;; LITTERAL
+;; strings
+(def s "juliet echo plus loin victor india echo november sierra plus loin delta plus loin echo charlie romeo india romeo echo plus loin lima plus loin alpha lima papa hotel alpha bravo echo tango plus loin sierra alpha november sierra plus loin romeo echo golf alpha romeo delta echo romeo plus loin echo tango plus loin juliet echo plus loin mike echo plus loin sierra uniform india sierra plus loin tango romeo oscar mike papa echo plus loin quebec uniform echo plus loin delta alpha november sierra plus loin delta plus loin romeo plus loin echo tango plus loin yankee.")
+s
+;; BINDING
+;;
+
+;; DOC
+
+(doc clojure.string/split)
+(inc 1)
+(count "abc")
+(count s)
+(doc clojure.string/split)
+(clojure.string/split s #" ")
+[1 2 3]
+(class [1 2 3])
+
+;; FILTER
+
+(range 100)
+(filter even? (range 100))
+(clojure.string/split s #" ")
+(remove (fn[word] (= word "loin"))   (clojure.string/split s #" "))
+;; MORE EXPRESSIVE : NAME PREDICATE
+(defn loin? [word]
+ (= word "loin"))
+(loin? "sls")
+(loin? "loin")
+;; predicat ; true or not ????
+
+;; WHAT IS TRUE ??
+
+(remove loin?  (clojure.string/split s #" "))
+(def words  (clojure.string/split s #" "))
+(remove loin? words)
+
+;; MAP
+
+;; (map f [1 2 3])
+(map inc [1 2 3])
+(map first (remove loin? words))
+;; know 100 functions on ALL types... 
+(remove loin? words))
+(remove loin? words)
+(first "plus")
+
+;; MORE ELABORATE FUNCTION
+
+(defn word->letter
+ [word]
+(if (= "plus" word)
+  " "
+  (first word))))
+  
+( word->letter "plus")
+( word->letter "papa")
+(class ( word->letter "papa"))
+(first " ")
+(defn word->letter
+ [word]
+(if (= "plus" word)
+ \space
+ (first word)))
+( word->letter "papa")
+( word->letter "plus")
+(remove loin? words)
+(map word->letter (remove loin? words))
+(apply str (map word->letter (remove loin? words)))
+
+;; SWITCH TO UNIT TEST and "real project" some where
+;; TBD
+
+;; CLASSIC ->>
+
+(-> words 
+    (remove loin?)
+    (map word->letter)
+    (apply str))
+(-> words (remove loin?))
+(->> words (remove loin?))
+(->> words (remove loin?) (map word->letter))
+(->> words (remove loin?) (map word->letter) (apply str))
+(->> (clojure.string/split s #" ") (remove loin?) (map word->letter) (apply str))
+s
+;; RESULT SO FAR
+(->> (clojure.string/split s #" ") (remove loin?) (map word->letter) (take 10)  (apply str))
+
+;; SHOW INTEROP TBD
